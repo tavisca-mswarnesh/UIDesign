@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOME</title>
+	<style>
+		* {
+		  box-sizing: border-box;
+		}
+		
+		.header {
+		  border: 1px solid black;
+		  padding: 15px;
+		  	color:white;
+		  overflow: hidden;
+		  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+ background-blend-mode: multiply,multiply;
+
+
+		}
+		
+		.menu {
+		  width: 20%;
+		  height: 450px;
+		  float: left;
+		  padding: 15px;
+		  overflow: hidden;
+		  border: 1px solid black;
+		  background-color: white;
+		}
+		
+		.main {
+		  width: 80%;
+		  height: 450px;
+		  float: left;
+		  padding: 15px;
+		  overflow: hidden;
+		  border: 1px solid black;
+		  background-color: white;
+		}
+		.footer {
+		  border: 1px solid black;
+		  padding: 15px;
+		  overflow: hidden;
+		  background-color: white;
+		  text-align: end;	
+		  font-size: 25px;
+		  
+		  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+ background-blend-mode: multiply,multiply;
+		  	
+		}
+		li a {
+  			display: block;
+  			width: 100px;
+			font-size: 25px;
+			border-left: 0px; 
+			padding-bottom: 15px;
+			text-decoration: none;
+		    color: black;
+		}
+		
+		.active{
+			color:black;
+		}
+		table {
+  			font-family: arial, sans-serif;
+  			border-collapse: collapse;
+  			width: 100%;
+		}
+
+		th {
+  			border: 1px solid #dddddd;
+			
+  			text-align: center;
+			color: white;
+			background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+ background-blend-mode: multiply,multiply;
+  			padding: 8px;
+		}
+		td {
+  			border: 1px solid #dddddd;
+  			text-align: center;
+  			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+  			background-color: #dddddd;
+		}
+
+		</style>
+</head>
+<body>
+	<div>
+		<div class="header">
+			LOGO
+		</div>
+		
+
+		<div class="menu">
+			
+			<ul style="list-style-type:none; margin: 0; padding-left: 60px; ">
+				<li><a href="#TODO">TODO</a></li>
+  				<li><a href="#USER">USER</a></li>
+  				<li><a href="#LOGIN">LOGIN</a></li>
+  
+			  </ul>
+		</div>
+		<div class="main">
+			<div id="TODO" style="height: 470px;padding-top: 10px;">
+				<b>TODO LIST</b><br/><br/>
+				<pre><input type="text">  <button>Add  </button> </pre>
+				<table>
+						<tr>
+						  <th>Date</th>
+						  <th>Task</th>
+						  <th>Action</th>
+						</tr>
+						<tr>
+						  <td>15-08-2019</td>
+						  <td>Cleaning</td>
+						  <td><button onclick="window.location.href = 'edit.html';">Edit</button></td>
+						</tr>
+						<tr>
+						  <td>16-08-2019</td>
+						  <td>washing</td>
+						  <td><button onclick="window.location.href = 'edit.html';">Edit</button></td>
+						</tr>
+						<tr>
+						  <td>17-08-2019</td>
+						  <td>wathing netflix</td>
+						  <td><button onclick="window.location.href = 'edit.html';">Edit</button></td>
+						</tr>
+						<tr>
+						  <td>18-08-2019</td>
+						  <td>completing assignments</td>
+						  <td><button onclick="window.location.href = 'edit.html';">Edit</button></td>
+						</tr>
+						<tr>
+						  <td>19-08-2019</td>
+						  <td>wathing prime</td>
+						  <td><button onclick="window.location.href = 'edit.html';">Edit</button></td>
+						</tr>
+						
+					  </table>
+			</div>
+			<div id="USER" style="height: 470px;padding-top: 50px;text-align: center;font-size: 30px">
+					<pre>
+	<b><u>USER DETAILS</u></b><br/>				
+<b>NAME:</b> M.V.Swarnesh<br/>
+		<b>EMAIL:</b> matapalliswarnesh@gmail.com<br/>
+	<b>DATE OF BIRTH:</b> 23-04-1997<br/>
+				</pre>
+			</div>
+			<<div id="LOGIN" style="height: 470px;padding-top: 50px;text-align: center;font-size: 30px">
+					<pre>
+	<b><u>LOGIN</u></b><br/>				
+	<b>User ID:</b> <input type="text"><br/>
+	<b>Password:</b> <input type="text"><br/>
+				</pre>
+			</div>
+		
+		</div>
+		<div class="footer">
+				<a href="Home.html" style="text-decoration: none;border-left:2px solid white !important;padding: 10px;color: white;">HOME</a>
+				<a href="aboutus.html" style="text-decoration: none;border-left:2px solid white !important;padding: 10px;color: white;">ABOUT US</a>
+				<a href="contactus.html" style="text-decoration: none;border-left:2px solid white !important;padding: 10px;color: white;">CONTACT US</a>
+		</div>
+	</div>
+</body>
+</html>
