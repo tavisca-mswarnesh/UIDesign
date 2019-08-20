@@ -2,101 +2,8 @@
 <html>
 <head>
     <title>Home</title>
-<style>
-.item1 { 
-    grid-area: header; 
-    border: 1px solid black;
-		  
-		  	color:white;
-		  overflow: hidden;
-		  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
- background-blend-mode: multiply,multiply;
-    }
-
-
-.item2 { 
-    grid-area: menu; height: 385px;
-		  
-		  overflow: hidden;
-		  border: 1px solid black;
-		  background-color: white;
-    }
-.item3 { 
-    grid-area: main; height: 385px;  grid-column: 2 / span 3;
-    
-		  overflow: hidden;
-		  border: 1px solid black;
-		  background-color: white;
-    }
-.item5 { 
-    grid-area: footer; 
-    border: 1px solid black;
-		
-		  overflow: hidden;
-		  background-color: white;
-		  text-align: end;	
-		  font-size: 25px;
-          background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
- background-blend-mode: multiply,multiply;
-    }
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'header header header header'
-    'menu main main main'
-    'footer footer footer footer';
-  grid-gap: 0px;
-  
-
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  
-  padding: 25px 0;
-  font-size: 30px;
-}
-
-li a {
-  			display: block;
-  			width: 100px;
-			font-size: 25px;
-			border-left: 0px; 
-			padding-bottom: 15px;
-			text-decoration: none;
-		    color: black;
-		}
-		
-		.active{
-			color:black;
-		}
-		table {
-  			font-family: arial, sans-serif;
-  			border-collapse: collapse;
-  			width: 80%;
-              margin: 0px auto;
-		}
-
-		th {
-  			border: 1px solid #dddddd;
-			
-  			text-align: center;
-			color: white;
-			background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
- background-blend-mode: multiply,multiply;
-  			padding: 8px;
-		}
-		td {
-  			border: 1px solid #dddddd;
-  			text-align: center;
-  			padding: 8px;
-		}
-
-		tr:nth-child(even) {
-  			background-color: #dddddd;
-		}
-</style>
+  <link rel="stylesheet" href="homestyles.css">
+  <script src="scripts.js"></script>
 </head>
 <body>
 
@@ -112,41 +19,16 @@ li a {
       </ul>
   </div>
   <div class="item3" style="height: 400px">
-    <div id="TODO" >
+    <div id="TODO" style="height: auto ;margin-bottom:400px">
         <b style="font-size: 30px; text-align: center"><u>TODO LIST</u></b><br/>
-        <input type="text">  <button>Add  </button> <br/><br/>
-        <table>
-                <tr>
-                  <th>Date</th>
-                  <th>Task</th>
-                  <th>Action</th>
-                </tr>
-                <tr>
-                  <td>15-08-2019</td>
-                  <td>Cleaning</td>
-                  <td><button onclick="window.location.href = 'edit.html';">Edit</button></td>
-                </tr>
-                <tr>
-                  <td>16-08-2019</td>
-                  <td>washing</td>
-                  <td><button onclick="window.location.href = 'edit.html';">Edit</button></td>
-                </tr>
-                <tr>
-                  <td>17-08-2019</td>
-                  <td>wathing netflix</td>
-                  <td><button onclick="window.location.href = 'edit.html';">Edit</button></td>
-                </tr>
-                <tr>
-                  <td>18-08-2019</td>
-                  <td>completing assignments</td>
-                  <td><button onclick="window.location.href = 'edit.html';">Edit</button></td>
-                </tr>
-                <tr>
-                  <td>19-08-2019</td>
-                  <td>wathing prime</td>
-                  <td><button onclick="window.location.href = 'edit.html';">Edit</button></td>
-                </tr>
-                
+        <input type="text" id="data">  <button onclick="ToDoAdd()">Add  </button> <br/><br/>
+        <table id="todotable">
+            <tr>
+                <th>Date</th>
+                <th>Task</th>
+                <th>Action</th>
+              </tr> 
+              
               </table>
     </div>
     <div id="USER" style="height: 470px;padding-top: 50px;text-align: center;font-size: 30px">
@@ -160,8 +42,9 @@ li a {
     <div id="LOGIN" style="height: 470px;padding-top: 50px;text-align: center;font-size: 30px">
             <pre>
 <b><u>LOGIN</u></b><br/>				
-<b>User ID:</b> <input type="text"><br/>
-<b>Password:</b> <input type="text"><br/>
+<b>User ID:</b> <input type="text" id="userid"><br/>
+<b>Password:</b> <input type="text" id="password"><br/>
+<button onclick="validate(userid,password)">Validate</button>
         </pre>
     </div>
   </div>  
