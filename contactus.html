@@ -1,68 +1,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HOME</title>
-	<style>
-		* {
-		  box-sizing: border-box;
-		}
-		
-		.header {
-		  border: 1px solid black;
-		  padding: 15px;
+    <title>Home</title>
+<style>
+.item1 { 
+    grid-area: header; 
+    border: 1px solid black;
+		  
 		  	color:white;
 		  overflow: hidden;
 		  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
  background-blend-mode: multiply,multiply;
+    }
 
 
-		}
-		
-		
-		.main {
-		  width: 100%;
-		  height: 490px;
-		  float: left;
-		  padding: 15px;
+.item2 { 
+    grid-area: menu; height: 385px;
+		  
 		  overflow: hidden;
 		  border: 1px solid black;
 		  background-color: white;
-		}
-		.footer {
+    }
+.item3 { 
+    grid-area: main; height: 385px;  grid-column: 1 / span 4;
+    
+		  overflow: hidden;
 		  border: 1px solid black;
-		  padding: 15px;
+		  background-color: white;
+    }
+.item5 { 
+    grid-area: footer; 
+    border: 1px solid black;
+		
 		  overflow: hidden;
 		  background-color: white;
 		  text-align: end;	
 		  font-size: 25px;
-		  
-		  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+          background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
  background-blend-mode: multiply,multiply;
-		  	
+    }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header'
+    'main main main main'
+    'footer footer footer footer';
+  grid-gap: 0px;
+  
+
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  
+  padding: 25px 0;
+  font-size: 30px;
+}
+
+li a {
+  			display: block;
+  			width: 100px;
+			font-size: 25px;
+			border-left: 0px; 
+			padding-bottom: 15px;
+			text-decoration: none;
+		    color: black;
 		}
 		
-		</style>
+		.active{
+			color:black;
+		}
+		table {
+  			font-family: arial, sans-serif;
+  			border-collapse: collapse;
+  			width: 80%;
+              margin: 0px auto;
+		}
+
+		th {
+  			border: 1px solid #dddddd;
+			
+  			text-align: center;
+			color: white;
+			background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+ background-blend-mode: multiply,multiply;
+  			padding: 8px;
+		}
+		td {
+  			border: 1px solid #dddddd;
+  			text-align: center;
+  			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+  			background-color: #dddddd;
+		}
+</style>
 </head>
 <body>
-	<div>
-		<div class="header">
-			LOGO
-		</div>
-		
 
-		
-        <div class="main" style="font-size: 40px">
-            <b><U>CONTACT US</U> </b><br/><br/><br/>
+
+<div class="grid-container">
+  <div class="item1">Header</div>
+  
+  <div class="item3" style="height: 400px; text-align: center">
+		<b><U>CONTACT US</U> </b><br/><br/><br/>
             <b>Email:</b> admin@company.com<br/><br/>
             <b>Phone no:</b> 9876543210<br/>
-        </div>
-		
-		</div>
-		<div class="footer">
-				<a href="Home.html" style="text-decoration: none;border-left:2px solid white !important;padding: 10px;color: white;">HOME</a>
-				<a href="aboutus.html" style="text-decoration: none;border-left:2px solid white !important;padding: 10px;color: white;">ABOUT US</a>
-				<a href="contactus.html" style="text-decoration: none;border-left:2px solid white !important;padding: 10px;color: white;">CONTACT US</a>
-		</div>
-	</div>
+  </div>  
+  
+  <div class="item5">
+        <a href="Home.html" style="text-decoration: none;border-left:2px solid black !important;padding: 10px;color: black;">HOME</a>
+        <a href="aboutus.html" style="text-decoration: none;border-left:2px solid black !important;padding: 10px;color: black;">ABOUT US</a>
+        <a href="contactus.html" style="text-decoration: none;border-left:2px solid black !important;padding: 10px;color: black;">CONTACT US</a>
+  </div>
+  
+</div>
+
 </body>
 </html>
