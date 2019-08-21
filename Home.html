@@ -19,9 +19,10 @@
       </ul>
   </div>
   <div class="item3" style="height: 400px">
-    <div id="TODO" style="height: auto ;margin-bottom:400px">
+    <div id="TODO" style="height: auto ;margin-bottom:400px;margin-left: 10px;margin-top: 30px">
         <b style="font-size: 30px; text-align: center"><u>TODO LIST</u></b><br/>
         <input type="text" id="data">  <button onclick="ToDoAdd()">Add  </button> <br/><br/>
+        <input type="text" id="search" onkeyup="Suggest(this)">  <input type="submit"><br/><br/>  
         <table id="todotable">
             <tr>
                 <th>Date</th>

@@ -166,3 +166,56 @@ function validate(userid,password)
         alert("you have sucessfully logedin");
     }
 }
+
+function Suggest(obj)
+{
+    var key=obj.value
+    if(key==""||key==null||key==" "){
+        var box=document.createElement("div");
+        box.setAttribute("class","autocomplete")
+        box.setAttribute("id","box");
+        try{
+            document.getElementById("box").remove();
+        }
+        catch(e)
+        {
+            
+        }
+        obj.parentElement.insertBefore(box,obj.nextElementSibling.nextElementSibling.nextElementSibling);
+    }
+    else{
+        var searchcontent=["one","ok","ongole","orange"];
+    var matched=[];
+
+    
+    for(var i=0;i<searchcontent.length;i++)
+    {
+        var word=searchcontent[i];
+        
+        if(word.substring(0,key.length)==key)
+            matched.push(word);
+    }
+    console.log(key);
+    console.log(matched);
+    try{
+        document.getElementById("box").remove();
+    }
+    catch(e)
+    {
+        
+    }
+    var box=document.createElement("div");
+    box.setAttribute("class","autocomplete")
+    box.setAttribute("id","box");
+    for(var i=0;i<matched.length;i++)
+    {
+        var division=document.createElement("div");
+        var text=document.createTextNode(matched[i]);
+        division.appendChild(text);
+        box.appendChild(division);
+    }
+    //obj.parentElement.appendChild(box);
+    obj.parentElement.insertBefore(box,obj.nextElementSibling.nextElementSibling.nextElementSibling);
+    }
+    
+}
