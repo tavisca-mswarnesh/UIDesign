@@ -247,3 +247,60 @@ function Suggest(obj)
             tablerows[i].style.display="none";
     }
 }
+
+function loader()
+{
+    var xmlhttp = new XMLHttpRequest();
+    var table=document.getElementById("todotable");
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        for(var i=0;i<myObj.length;i++)
+        {
+            var tablerow=document.createElement("tr");
+
+            var date = document.createElement("td");
+    date.setAttribute("id","date");
+    var task=document.createElement("td");
+    task.setAttribute("id","task");
+    var Action=document.createElement("td");
+    Action.setAttribute("id","action");
+    
+    var d=new Date();
+
+    var getdate=document.createTextNode(d.getDate() +"/" + d.getMonth() + "/"+d.getFullYear());
+    console.log(getdate);
+    var tasknode=document.createTextNode(myObj[i].title);
+    var editbutton=document.createElement("button");
+    var deletebutton=document.createElement("button");
+
+    var buttontext=document.createTextNode("Edit");
+    editbutton.appendChild(buttontext);
+    editbutton.setAttribute("onclick","edit(this)")
+
+    date.appendChild(getdate);
+    task.appendChild(tasknode);
+    Action.appendChild(editbutton);
+
+    var buttontext=document.createTextNode("Delete");
+    deletebutton.appendChild(buttontext);
+    deletebutton.setAttribute("onclick","del(this)");
+    Action.appendChild(deletebutton);
+
+    tablerow.appendChild(date);
+    tablerow.appendChild(task);
+    tablerow.appendChild(Action);
+
+    table.appendChild(tablerow);
+
+
+
+        }
+        
+        
+    }
+    };
+    xmlhttp.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
+    xmlhttp.send();
+
+}
