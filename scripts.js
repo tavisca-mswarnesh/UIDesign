@@ -205,7 +205,7 @@ function Suggest(obj)
         
     }
     var box=document.createElement("div");
-    box.setAttribute("class","autocomplete")
+    box.setAttribute("class","autocomplete-items")
     box.setAttribute("id","box");
     for(var i=0;i<matched.length;i++)
     {
